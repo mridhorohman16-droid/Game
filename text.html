@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter: Galaxy Defender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Health:</span>
+                    <div class="health-bar-container">
+                        <div id="health-bar" class="health-bar"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Level:</span>
+                    <span id="level" class="stat-value">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Enemies:</span>
+                    <span id="enemy-count" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="power-ups">
+                <div id="powerup-shield" class="powerup-icon shield" title="Shield Active">🛡️</div>
+                <div id="powerup-double" class="powerup-icon double" title="Double Shot">⚡</div>
+                <div id="powerup-speed" class="powerup-icon speed" title="Speed Boost">🚀</div>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="game-controls">
+            <button id="startBtn" class="btn btn-primary">Start Game</button>
+            <button id="pauseBtn" class="btn btn-secondary" disabled>Pause</button>
+            <button id="restartBtn" class="btn btn-danger">Restart</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>Controls:</h3>
+            <p>⬆️ ⬇️ ⬅️ ➡️ - Move ship</p>
+            <p>Spacebar - Shoot</p>
+            <p>P - Pause/Resume</p>
+            <p>R - Restart</p>
+        </div>
+    </div>
+    
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p>Your final score: <span id="finalScore">0</span></p>
+            <p>Level reached: <span id="finalLevel">1</span></p>
+            <p>Enemies destroyed: <span id="enemiesDestroyed">0</span></p>
+            <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+    
+    <div id="levelCompleteModal" class="modal">
+        <div class="modal-content">
+            <h2>Level Complete!</h2>
+            <p>Score bonus: +<span id="levelBonus">1000</span></p>
+            <p>Proceeding to next level...</p>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
